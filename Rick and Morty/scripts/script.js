@@ -72,9 +72,7 @@ function renderNextEpisodesButton(nextUrl) {
         });
     });
     sidebarElement.appendChild(nextButton);
-}
-
-function renderListOfEpisodes(episodes, nextUrl) {
+}function renderListOfEpisodes(episodes, nextUrl) {
     // Clean all the buttons insdide the sidebar
     document.querySelectorAll('.next-list-button').forEach(buttonElement => sidebarElement.removeChild(buttonElement));
 
@@ -88,6 +86,8 @@ function renderListOfEpisodes(episodes, nextUrl) {
         });
     });
     renderNextEpisodesButton(nextUrl);
+
+
 }
 
 
