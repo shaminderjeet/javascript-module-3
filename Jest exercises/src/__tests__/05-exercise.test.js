@@ -48,7 +48,8 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
-    const result=('maria')
+    const result= addUser(users,'maria')
+    expect(result).toContainEqual(expectedUser)
   
   });
 
@@ -89,7 +90,7 @@ describe("05-exercises", () => {
 
     // Write the assertion
     let result=makeAdminUser(user)
-    expect(result).toEqual(expect.objectConating(expectedProperty))
+    expect(result).toEqual(expect.objectContaining(expectedProperty))
   });
 
   test("getUserInfo returns an object without the address properties", () => {
@@ -116,6 +117,6 @@ describe("05-exercises", () => {
 
     // Write the assertion
     let result=getUserInfo(user)
-    expect(result).not.toEqual(expect.objectConating)
+    expect(result).not.toEqual(expect.objectContaining(userAddress))
   });
 });

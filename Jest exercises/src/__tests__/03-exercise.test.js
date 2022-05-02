@@ -34,7 +34,7 @@ describe("03-exercises", () => {
      */
 
     // Write the assertion
-    expect(multiplyNums(numbers)).not.toEqual(expected)
+    expect(multiplyNums(numbers)).not.toBe(numbers)
   });
 
   test("sanitizeUserData returns an object without sensitive information", () => {

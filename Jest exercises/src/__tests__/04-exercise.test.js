@@ -51,7 +51,7 @@ describe("04-exercises", () => {
 
     // Write the assertion
     let result = createCorporateEmailAddress("dani");
-    expect(result).toMatch(/dani/);
+    expect(result).toMatch(/dani@company.com/);
   });
 
   test("generateRandomNumberFrom1to10 returns a number between 1 and 10", () => {

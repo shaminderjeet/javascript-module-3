@@ -18,6 +18,11 @@ And jest globally so that you can run it from the terminal:
 $ npm install --global jest
 ```
 
+Using jest without it crashing the computer maybe:
+```bash
+jest --runInBand
+```
+
 ### 01-exercise
 
 Open the `01-exercise.test.js` file inside the `src/__tests__/` folder and solve the exercise by following the instructions. Then, you can check if your solution is correct by running `jest` from the terminal and passsing in the test suite name: `01-exercise`.
