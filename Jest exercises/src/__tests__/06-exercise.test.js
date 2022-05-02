@@ -20,7 +20,7 @@ describe("06-exercises", () => {
    * @tip
    * done callback
    */
-  test("asyncAdd returns the sum of the numbers", () => {
+  test("asyncAdd returns the sum of the numbers", done=> {
     expect.assertions(1);
 
     asyncAdd(5, 5, callback);
@@ -28,6 +28,7 @@ describe("06-exercises", () => {
     // Finish the test
     function callback(result) {
       expect(result).toBe(10);
+      done();
     }
   });
 
@@ -48,7 +49,11 @@ describe("06-exercises", () => {
     expect.assertions(1);
 
     // Finish the test
+    fetchUserOK(userID).then((resData) => {
+      expect(resData).toEqual(expectedUser);
+      done();
   });
+})
 
   /**
    * Finish the test so that it checks if the result of calling
@@ -67,7 +72,9 @@ describe("06-exercises", () => {
     const expectedMessage = `User ${userID} not found`;
 
     expect.assertions(1);
-
-    // Finish the test
-  });
-});
+    fetchUserFail(userID).catch((error) => {
+      expect(error).toEqual(expectedMessage);
+      done();
+    });
+  })
+})

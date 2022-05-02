@@ -25,6 +25,8 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+    let result=addItemToList(prevList,newItem)
+    expect(result).toEqual([1,2,3,4,5])
   });
 
   test("addUser adds a new user to the list of users", () => {
@@ -46,6 +48,8 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+    const result=('maria')
+  
   });
 
   test("getWeekDays returns an array of week days", () => {
@@ -62,6 +66,8 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+    let result=getWeekDays()
+    expect(result).toEqual(expect.arrayContaining(expectedDays))
   });
 
   test("makeAdminUser returns an object with the role property", () => {
@@ -82,6 +88,8 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+    let result=makeAdminUser(user)
+    expect(result).toEqual(expect.objectConating(expectedProperty))
   });
 
   test("getUserInfo returns an object without the address properties", () => {
@@ -107,5 +115,7 @@ describe("05-exercises", () => {
      */
 
     // Write the assertion
+    let result=getUserInfo(user)
+    expect(result).not.toEqual(expect.objectConating)
   });
 });
