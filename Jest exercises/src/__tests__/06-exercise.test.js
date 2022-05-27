@@ -20,7 +20,7 @@ describe("06-exercises", () => {
    * @tip
    * done callback
    */
-  test("asyncAdd returns the sum of the numbers", done=> {
+  test("asyncAdd returns the sum of the numbers", done => {
     expect.assertions(1);
 
     asyncAdd(5, 5, callback);
@@ -42,18 +42,19 @@ describe("06-exercises", () => {
    * need to wait for the promise and the result to check if the resolved
    * data is equal to the `expectedUser` variable.
    */
-  test("fetchUserOK resolves the user data", () => {
+  test("fetchUserOK resolves the user data", done => {
     const userID = 5;
     const expectedUser = { id: userID, name: "Alex" };
 
     expect.assertions(1);
 
     // Finish the test
-    fetchUserOK(userID).then((resData) => {
-      expect(resData).toEqual(expectedUser);
-      done();
+    fetchUserOK(userID) // Promise<{}>
+    .then(resolvedData => {
+        expect(resolvedData).toEqual(expectedUser);
+        done();
+      });
   });
-})
 
   /**
    * Finish the test so that it checks if the result of calling
@@ -67,14 +68,18 @@ describe("06-exercises", () => {
    * the result to check if the rejected message is the same
    * as the `expectedMessage` variable.
    */
-  test("fetchUserFail rejects with an error message", () => {
+  test("fetchUserFail rejects with an error message", done => {
     const userID = 5;
     const expectedMessage = `User ${userID} not found`;
 
     expect.assertions(1);
-    fetchUserFail(userID).catch((error) => {
-      expect(error).toEqual(expectedMessage);
+
+    // Finish the test
+    fetchUserFail(userID)
+    // .then(msg => console.log('UNUSED CONSOLE LOG')) // pointless and useless
+    .catch(rejectedMessage => {
+      expect(rejectedMessage).toEqual(expectedMessage);
       done();
     });
-  })
-})
+  });
+});
